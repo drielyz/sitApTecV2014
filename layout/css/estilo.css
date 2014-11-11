@@ -1,6 +1,7 @@
+
 /* 
-    Created on : 20/10/2014, 15:59:28
-    Author     : Driely Z.
+    Created on : 20/10/2014, 16:05:09
+    Author     : Jeffreyman
 */
 body{background-color: black;
      color: white;
@@ -30,15 +31,15 @@ body{background-color: black;
         border: 2px white solid;
         margin:5px;
     }
-    
+
 }
 
 @media screen and (min-width: 800px) and (max-width: 1279px){
-  section{
+ section{
         display: block;
         margin: 0 auto;
         width: 800px;
-        border: 4px chartreuse solid;
+        border: 2px yellow solid;
         padding-left: 50px;
     }
     figure{
@@ -50,12 +51,13 @@ body{background-color: black;
     }
 
 }
+
 @media screen and (max-width: 799px){
-  section{
+    section{
         display: block;
         margin: 0 auto;
-        width: 800px;
-        border: 4px yellow solid;
+        width: 640px;
+        border: 2px chartreuse solid;
         padding-left: 50px;
     }
     figure{
@@ -65,29 +67,37 @@ body{background-color: black;
         border: 2px white solid;
         margin:5px;
     }
+    
 }
-    img{
+
+img{
         width: 90%;
         height: 90%;
         display: block;
-        margin: 5% auto;
+        margin: 2% auto;
     }
     figcaption{
-        background-color: rgba(240,240,240,0.4);
+        background-color: rgba(240, 240, 240, 0.4);
         color: black;
         height: 30px;
         position: relative;
         bottom: 50px;
         text-align: center;
         width: 95%;
-        margin: 0auto;
+        margin: 0 auto;
         transition: 0.5s;
     }
-
-.final {
-clear: both;
-}
-
-figcaption a{text-decoration: none; color: red;}
-figcaption a:hover{color: yellow; }
-figcaption:hover{background-color: rgba(0,0,0,0.4); transition: 1s;}
+    .final{
+        clear: both;
+    }
+    figcaption a{
+        text-decoration: none;
+        color: black;
+    }
+    figcaption a:hover{
+        color: yellow;
+    }
+    figcaption:hover{
+        background-color: rgba(0,0,0,0.4);
+        transition: 1s;
+    }

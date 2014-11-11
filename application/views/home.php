@@ -10,7 +10,7 @@
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
-		<!--[if lte IE 8]><script src="<?php echo base_url(); ?>assets/css/ie/html5shiv.js"></script><![endif]-->
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
 		<script src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>
 		<script src="<?php echo base_url(); ?>assets/js/skel.min.js"></script>
 		<script src="<?php echo base_url(); ?>assets/js/skel-layers.min.js"></script>
@@ -21,7 +21,7 @@
 			<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style-desktop.css" />
 			<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style-wide.css" />
 		</noscript>
-		<!--[if lte IE 8]><link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/ie/v8.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 	</head>
 	<!--
 		Note: Set the body element's class to "left-sidebar" to position the sidebar on the left.
