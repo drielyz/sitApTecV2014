@@ -25,103 +25,104 @@
                 <!--
                         Note: You can change the number of list items in "stats" to whatever you want.
                 -->
-<!--                <ul class="stats">
-                    <li><a href="#" class="icon fa-comment">16</a></li>
-                    <li><a href="#" class="icon fa-heart">32</a></li>
-                    <li><a href="#" class="icon fa-twitter">64</a></li>
-                    <li><a href="#" class="icon fa-facebook">128</a></li>
-                </ul>-->
+                <!--                <ul class="stats">
+                                    <li><a href="#" class="icon fa-comment">16</a></li>
+                                    <li><a href="#" class="icon fa-heart">32</a></li>
+                                    <li><a href="#" class="icon fa-twitter">64</a></li>
+                                    <li><a href="#" class="icon fa-facebook">128</a></li>
+                                </ul>-->
 
             </div><!--info-->
-            
-              <?php echo form_open('usuarios/inserir', 'id="form-pessoas"'); ?>
 
-        <label for="nome">Nome:</label><br/>
-        <input type="text" name="nome" value="<?php echo set_value('nome'); ?>"/>
-        <div class="error"><?php echo form_error('nome'); ?></div>
-        
-        <label for="email">Email:</label><br/>
-        <input type="text" name="email" value="<?php echo set_value('email'); ?>"/>
-        <div class="error"><?php echo form_error('email'); ?></div>
-        
-         <label for="senha">Senha:</label><br/>
-         <input type="password" name="senha" value="<?php echo set_value('senha'); ?>"/>
-        <div class="error"><?php echo form_error('senha'); ?></div>
-        
-         <label for="sexo">Sexo:</label><br/>
-         <input type="text" name="sexo" value="<?php echo set_value('sexo'); ?>"/>
-        <div class="error"><?php echo form_error('sexo'); ?></div>
-        
-         <label for="endereco">Endereço:</label><br/>
-         <input type="text" name="endereco" value="<?php echo set_value('endereco'); ?>"/>
-        <div class="error"><?php echo form_error('endereco'); ?></div>
-        
-         <label for="cidade">Cidade:</label><br/>
-         <input type="text" name="cidade" value="<?php echo set_value('cidade'); ?>"/>
-        <div class="error"><?php echo form_error('cidade'); ?></div>
-        
-         <label for="estado">Estado:</label><br/>
-         <input type="text" name="estado" value="<?php echo set_value('estado'); ?>"/>
-        <div class="error"><?php echo form_error('estado'); ?></div>
-        
-         <label for="cep">CEP:</label><br/>
-         <input type="text" name="cep" value="<?php echo set_value('cep'); ?>"/>
-        <div class="error"><?php echo form_error('cep'); ?></div>
-        
-         <label for="foto">Foto:</label><br/>
-         <input type="text" name="foto" value="<?php echo set_value('foto'); ?>"/>
-        <div class="error"><?php echo form_error('foto'); ?></div>
-        
-        <input type="submit" name="cadastrar" value="Cadastrar" />
+            <?php echo form_open('usuarios/inserir', 'id="form-pessoas"'); ?>
 
-        <?php echo form_close(); ?>
-        <div id="grid-pessoas">
-            <ul>
-                <?php foreach ($usuarios as $usuario): ?>
-                    <li>
-                        <a title="Deletar" href="<?php echo base_url() . 'usuarios/deletar/' . $usuario->idusuario; ?>" onclick="return confirm('Confirma a exclusão deste registro?')">
-                        <img src="<?php echo base_url(); ?>assets/images/lixo.png" /></a>
-                        <span> - </span>
-                        <a title="Editar" href="<?php echo base_url() . 'usuarios/editar/' . $usuario->idusuario; ?>"><?php echo $usuario->nome; ?></a>
-                        <span> - </span>
-                        <span><?php echo $usuario->email; ?></span>
-                        <span> - </span>
-                        <span><?php echo $usuario->senha; ?></span>
-                        <span> - </span>
-                        <span><?php echo $usuario->cidade; ?></span>
-                        <span> - </span>
-                        <span><?php echo $usuario->estado; ?></span>
-                        <span> - </span>
-                        <span><?php echo $usuario->endereco; ?></span>
-                        <span> - </span>
-                        <span><?php echo $usuario->cep; ?></span>
-                        <span> - </span>
-                        <span><img src="<?php echo base_url(); ?>assets/images<?php echo $usuario->foto; ?>"/></span>
-                       
-                       
-                    </li>
-                <?php endforeach ?>
-            </ul>
-        </div>
+            <label for="nome">Nome:</label><br/>
+            <input type="text" name="nome" value="<?php echo set_value('nome'); ?>"/>
+            <div class="error"><?php echo form_error('nome'); ?></div>
+
+            <label for="email">Email:</label><br/>
+            <input type="text" name="email" value="<?php echo set_value('email'); ?>"/>
+            <div class="error"><?php echo form_error('email'); ?></div>
+
+            <label for="senha">Senha:</label><br/>
+            <input type="password" name="senha" value="<?php echo set_value('senha'); ?>"/>
+            <div class="error"><?php echo form_error('senha'); ?></div>
+
+            <label for="sexo">Sexo:</label><br/>
+            <input type="text" name="sexo" value="<?php echo set_value('sexo'); ?>"/>
+            <div class="error"><?php echo form_error('sexo'); ?></div>
+
+            <label for="endereco">Endereço:</label><br/>
+            <input type="text" name="endereco" value="<?php echo set_value('endereco'); ?>"/>
+            <div class="error"><?php echo form_error('endereco'); ?></div>
+
+            <label for="cidade">Cidade:</label><br/>
+            <input type="text" name="cidade" value="<?php echo set_value('cidade'); ?>"/>
+            <div class="error"><?php echo form_error('cidade'); ?></div>
+
+            <label for="estado">Estado:</label><br/>
+            <input type="text" name="estado" value="<?php echo set_value('estado'); ?>"/>
+            <div class="error"><?php echo form_error('estado'); ?></div>
+
+            <label for="cep">CEP:</label><br/>
+            <input type="text" name="cep" value="<?php echo set_value('cep'); ?>"/>
+            <div class="error"><?php echo form_error('cep'); ?></div>
+
+            <label for="foto">Foto:</label><br/>
+           
+            <?php echo form_open_multipart('upload/do_upload'); ?>
+            <input type="file" name="foto" size="20" />
+            <br />
+            <input type="submit" name="cadastrar" value="Cadastrar" />
+
+            <?php echo form_close(); ?>
+            <div id="grid-pessoas">
+                <ul>
+                    <?php foreach ($usuarios as $usuario): ?>
+                        <li>
+                            <a title="Deletar" href="<?php echo base_url() . 'usuarios/deletar/' . $usuario->idusuario; ?>" onclick="return confirm('Confirma a exclusão deste registro?')">
+                                <img src="<?php echo base_url(); ?>assets/images/lixo.png" /></a>
+                            <span> - </span>
+                            <a title="Editar" href="<?php echo base_url() . 'usuarios/editar/' . $usuario->idusuario; ?>"><?php echo $usuario->nome; ?></a>
+                            <span> - </span>
+                            <span><?php echo $usuario->email; ?></span>
+                            <span> - </span>
+                            <span><?php echo $usuario->senha; ?></span>
+                            <span> - </span>
+                            <span><?php echo $usuario->cidade; ?></span>
+                            <span> - </span>
+                            <span><?php echo $usuario->estado; ?></span>
+                            <span> - </span>
+                            <span><?php echo $usuario->endereco; ?></span>
+                            <span> - </span>
+                            <span><?php echo $usuario->cep; ?></span>
+                            <span> - </span>
+                            <span><img src="<?php echo base_url(); ?>assets/images<?php echo $usuario->foto; ?>"/></span>
+
+
+                        </li>
+                    <?php endforeach ?>
+                </ul>
+            </div>
         </article>
 
-              
+
 
         <!-- Pagination -->
-       
+
         <div class="pagination">
             <!--<a href="#" class="button previous">Previous Page</a>-->
-           <!--
-            <div class="pages">
-                <a href="#" class="active">1</a>
-                <a href="#">2</a>
-                <a href="#">3</a>
-                <a href="#">4</a>
-                <span>&hellip;</span>
-                <a href="#">20</a>
-            </div>
-            <a href="#" class="button next">Next Page</a>
-           -->
+            <!--
+             <div class="pages">
+                 <a href="#" class="active">1</a>
+                 <a href="#">2</a>
+                 <a href="#">3</a>
+                 <a href="#">4</a>
+                 <span>&hellip;</span>
+                 <a href="#">20</a>
+             </div>
+             <a href="#" class="button next">Next Page</a>
+            -->
         </div> <!-- Paginaiton-->
 
     </div><!-- content -->
